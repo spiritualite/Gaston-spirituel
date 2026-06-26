@@ -1,0 +1,277 @@
+TYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Héritage Spirituel — Kpala Gaston</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nuit:#0c1430;--nuit-2:#141d44;--nuit-3:#1d2856;
+  --or:#d8b34a;--or-clair:#f0d886;
+  --parchemin:#f3ead6;--parchemin-doux:#cdc4b0;
+  --terre:#b5532a;--ligne:rgba(216,179,74,.22);
+  --ombre:0 18px 50px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Lora',Georgia,serif;
+  background:radial-gradient(1200px 700px at 50% -10%, #1a2554 0%, transparent 60%),var(--nuit);
+  color:var(--parchemin);line-height:1.6;min-height:100vh;overflow-x:hidden;
+}
+h1,h2,h3,.cinzel{font-family:'Cinzel',serif;letter-spacing:.04em}
+a{color:inherit;text-decoration:none}
+.hidden{display:none !important}
+.logo{display:inline-flex;align-items:center;gap:.7rem}
+.logo svg{display:block}
+.logo .mark{filter:drop-shadow(0 4px 10px rgba(216,179,74,.35))}
+
+/* boutons */
+.btn{display:inline-block;width:100%;cursor:pointer;border:none;
+  font-family:'Cinzel',serif;font-weight:600;font-size:.92rem;letter-spacing:.06em;
+  padding:.9rem 1rem;border-radius:12px;margin-top:.6rem;transition:.2s transform,.2s filter}
+.btn:active{transform:translateY(1px)}
+.btn-or{background:linear-gradient(135deg,var(--or),#b8902f);color:#1a1405}
+.btn-or:hover{filter:brightness(1.08)}
+.btn-ghost{background:transparent;border:1px solid var(--ligne);color:var(--or-clair)}
+.btn-ghost:hover{background:rgba(216,179,74,.08)}
+.btn-wa{background:linear-gradient(135deg,#25d366,#128c4b);color:#04220f}
+input[type=text],input[type=password]{
+  width:100%;padding:.85rem 1rem;font-family:'Lora',serif;font-size:1rem;
+  background:#0a1230;border:1px solid var(--ligne);border-radius:12px;
+  color:var(--parchemin);letter-spacing:.04em}
+input:focus{outline:2px solid var(--or);outline-offset:1px}
+
+/* en-tête */
+header{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.8rem 1.1rem;background:rgba(10,16,40,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--ligne)}
+header .logo h1{font-size:1.05rem;color:var(--or-clair);line-height:1.1}
+header .logo small{display:block;font-family:'Lora',serif;font-style:italic;letter-spacing:0;font-size:.68rem;color:var(--parchemin-doux)}
+.menu-btn{background:none;border:1px solid var(--ligne);color:var(--or-clair);border-radius:10px;padding:.5rem .7rem;cursor:pointer;font-size:1.1rem;line-height:1}
+@media(min-width:860px){.menu-btn{display:none}}
+
+/* nav */
+nav{display:flex;gap:.3rem;flex-wrap:wrap;padding:.6rem 1.1rem 1rem;border-bottom:1px solid var(--ligne);background:rgba(13,20,50,.6)}
+nav.collapsed{display:none}
+@media(min-width:860px){nav{display:flex !important}}
+.nav-link{cursor:pointer;font-family:'Cinzel',serif;font-size:.74rem;font-weight:500;letter-spacing:.05em;
+  color:var(--parchemin-doux);padding:.5rem .8rem;border-radius:999px;border:1px solid transparent;transition:.18s}
+.nav-link:hover{color:var(--parchemin);border-color:var(--ligne)}
+.nav-link.active{background:linear-gradient(135deg,var(--or),#b8902f);color:#1a1405;font-weight:600}
+
+main{max-width:1040px;margin:0 auto;padding:1rem 1.1rem 4rem}
+
+/* bouton retour */
+.backbar{margin:.2rem 0 1.2rem}
+.back-btn{cursor:pointer;font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.05em;
+  color:var(--or-clair);background:transparent;border:1px solid var(--ligne);
+  border-radius:999px;padding:.5rem 1rem;transition:.18s}
+.back-btn:hover{background:rgba(216,179,74,.1);transform:translateX(-2px)}
+
+.view{animation:fade .4s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.eyebrow{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.28em;color:var(--or);text-transform:uppercase;margin-bottom:.5rem}
+.view h2{font-size:1.7rem;color:var(--parchemin);margin-bottom:.3rem}
+.view .lead{font-style:italic;color:var(--parchemin-doux);margin-bottom:1.6rem;max-width:62ch}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:1.4rem 0;opacity:.55}
+
+/* accueil */
+.hero{text-align:center;padding:2.4rem 1.2rem 2rem;border-radius:24px;
+  background:radial-gradient(600px 300px at 50% 0%, rgba(216,179,74,.12), transparent 70%),linear-gradient(180deg,var(--nuit-2),#0d1535);
+  border:1px solid var(--ligne);box-shadow:var(--ombre);margin-bottom:1.8rem}
+.hero h2{font-size:2rem;color:var(--or-clair);margin:1.1rem 0 .4rem}
+.hero p{max-width:46ch;margin:0 auto;color:var(--parchemin-doux);font-style:italic}
+.hero .verse{margin-top:1.2rem;font-size:.92rem;color:var(--parchemin)}
+
+.featured{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;justify-content:space-between;
+  background:linear-gradient(135deg,rgba(181,83,42,.22),rgba(216,179,74,.12));
+  border:1px solid var(--terre);border-radius:18px;padding:1.2rem 1.3rem;margin-bottom:1.8rem}
+.featured .ft-txt{flex:1;min-width:220px}
+.featured .badge{font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.2em;color:var(--or);text-transform:uppercase}
+.featured h3{font-size:1.15rem;color:var(--or-clair);margin:.2rem 0}
+.featured p{font-size:.85rem;color:var(--parchemin-doux);font-style:italic}
+.featured .btn{width:auto;margin-top:0;white-space:nowrap}
+
+.tiles{display:grid;gap:.9rem;grid-template-columns:repeat(2,1fr)}
+@media(min-width:680px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{cursor:pointer;text-align:left;padding:1.1rem;border-radius:16px;
+  background:linear-gradient(180deg,var(--nuit-2),#101838);border:1px solid var(--ligne);transition:.2s transform,.2s border-color}
+.tile:hover{transform:translateY(-3px);border-color:var(--or)}
+.tile .ico{font-size:1.5rem;margin-bottom:.5rem;display:block}
+.tile h3{font-size:.92rem;color:var(--or-clair);margin-bottom:.2rem}
+.tile p{font-size:.76rem;color:var(--parchemin-doux);font-style:italic}
+
+/* cartes livres */
+.cards{display:grid;gap:1rem}
+@media(min-width:680px){.cards{grid-template-columns:1fr 1fr}}
+.card{background:linear-gradient(180deg,var(--nuit-2),#101838);border:1px solid var(--ligne);border-radius:16px;padding:1.2rem;display:flex;flex-direction:column}
+.card h3{font-size:1.02rem;color:var(--or-clair);margin-bottom:.15rem}
+.card .meta{font-size:.72rem;color:var(--or);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.6rem}
+.card p{font-size:.9rem;color:var(--parchemin-doux);margin-bottom:.9rem}
+.card .pdev{flex:1}
+.price{font-family:'Cinzel',serif;color:var(--or-clair);font-size:.95rem;margin-bottom:.4rem}
+
+/* parchemin texte (prières, chants, enseignements) */
+.scroll{background:linear-gradient(180deg,var(--nuit-2),#0e1636);border:1px solid var(--ligne);border-left:3px solid var(--or);
+  border-radius:14px;padding:1.2rem 1.3rem;margin-bottom:1rem}
+.scroll h3{font-size:1.05rem;color:var(--or-clair);margin-bottom:.55rem}
+.scroll .verse-txt{white-space:pre-line;color:var(--parchemin);font-size:.95rem}
+.scroll .amen{display:block;margin-top:.7rem;font-family:'Cinzel',serif;color:var(--or);font-size:.82rem;letter-spacing:.1em}
+.cat-head{font-family:'Cinzel',serif;color:var(--terre);font-size:.95rem;letter-spacing:.06em;margin:1.6rem 0 .8rem;display:flex;align-items:center;gap:.6rem}
+.cat-head::before{content:"✦";color:var(--or)}
+
+/* mystères / étapes */
+.mystery{background:linear-gradient(180deg,var(--nuit-2),#101838);border:1px solid var(--ligne);border-radius:14px;padding:1.1rem 1.2rem;margin-bottom:.9rem}
+.mystery h3{font-size:1rem;color:var(--or-clair);margin-bottom:.1rem}
+.mystery .day{font-size:.72rem;color:var(--or);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem}
+.mystery .fruit{font-size:.82rem;color:var(--terre);font-style:italic;margin-top:.4rem}
+.mystery p{font-size:.9rem;color:var(--parchemin-doux)}
+.step{display:flex;gap:.9rem;margin-bottom:.9rem;align-items:flex-start}
+.step .n{flex:0 0 34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:'Cinzel',serif;font-weight:600;color:#1a1405;background:linear-gradient(135deg,var(--or),#b8902f);font-size:.85rem}
+.step .stxt h3{font-size:.95rem;color:var(--parchemin);margin-bottom:.1rem}
+.step .stxt p{font-size:.85rem;color:var(--parchemin-doux)}
+
+/* conseils avec versets */
+.advice{background:linear-gradient(180deg,var(--nuit-2),#101838);border:1px solid var(--ligne);border-radius:16px;padding:1.2rem}
+.advice .n{font-family:'Cinzel',serif;color:var(--or);font-size:.8rem;letter-spacing:.1em}
+.advice h3{font-size:1rem;color:var(--or-clair);margin:.15rem 0 .5rem}
+.advice p{font-size:.88rem;color:var(--parchemin-doux);margin-bottom:.8rem}
+.advice .word{border-left:3px solid var(--terre);background:rgba(181,83,42,.08);border-radius:0 10px 10px 0;padding:.6rem .8rem}
+.advice .word em{color:var(--parchemin);font-size:.86rem}
+.advice .word .ref{display:block;margin-top:.3rem;font-family:'Cinzel',serif;color:var(--or);font-size:.74rem;letter-spacing:.05em}
+
+/* page promo livre */
+.promo-hero{text-align:center;padding:2rem 1.2rem;border-radius:22px;border:1px solid var(--ligne);
+  background:radial-gradient(500px 250px at 50% 0%, rgba(216,179,74,.14), transparent 70%),linear-gradient(180deg,var(--nuit-2),#0d1535);margin-bottom:1.6rem}
+.promo-hero .badge{font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.22em;color:var(--terre);text-transform:uppercase}
+.promo-hero h2{font-size:1.8rem;color:var(--or-clair);margin:.5rem 0 .3rem}
+.promo-hero .tag{font-style:italic;color:var(--parchemin)}
+.benefits{list-style:none;display:grid;gap:.6rem}
+.benefits li{display:flex;gap:.7rem;font-size:.92rem;color:var(--parchemin)}
+.benefits li::before{content:"✦";color:var(--or);flex:0 0 auto}
+.toc{counter-reset:c;list-style:none;display:grid;gap:.45rem}
+.toc li{counter-increment:c;display:flex;gap:.7rem;font-size:.9rem;color:var(--parchemin-doux)}
+.toc li::before{content:counter(c,decimal-leading-zero);font-family:'Cinzel',serif;color:var(--or);font-size:.8rem}
+.excerpt{font-style:italic;color:var(--parchemin);border:1px dashed var(--ligne);border-radius:14px;padding:1.2rem;background:rgba(216,179,74,.05)}
+
+/* admin */
+.admin-box{max-width:560px;margin:0 auto}
+.admin-info{background:linear-gradient(180deg,var(--nuit-2),#101838);border:1px solid var(--ligne);border-radius:16px;padding:1.3rem;margin-bottom:1.2rem}
+.admin-info .row{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px dashed var(--ligne);font-size:.9rem}
+.admin-info .row:last-child{border-bottom:none}
+.admin-info .row span:first-child{color:var(--or);font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.04em}
+.admin-info .row a{color:var(--or-clair);border-bottom:1px dotted var(--or)}
+.field{text-align:left;margin-bottom:1rem}
+.field label{display:block;font-family:'Cinzel',serif;font-size:.74rem;letter-spacing:.05em;color:var(--or);margin-bottom:.4rem}
+.err-msg{color:#ff9b8a;font-size:.85rem;margin-top:.6rem;min-height:1.1rem}
+.ok-msg{color:#7fe0a0;font-size:.85rem;margin-top:.6rem;min-height:1.1rem}
+
+footer{text-align:center;padding:2rem 1rem;border-top:1px solid var(--ligne);color:var(--parchemin-doux);font-size:.78rem}
+footer .logo{margin-bottom:.7rem}
+footer a{color:var(--or-clair)}
+
+.pay-banner{background:linear-gradient(135deg,rgba(181,83,42,.18),rgba(216,179,74,.1));border:1px solid var(--terre);border-radius:14px;
+  padding:1rem 1.1rem;font-size:.85rem;color:var(--parchemin);margin:1.2rem 0;display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;justify-content:center;text-align:center}
+.pay-banner b{color:var(--or-clair)}
+.pay-banner .btn{width:auto;margin-top:0;padding:.7rem 1.2rem}
+</style>
+</head>
+<body>
+
+<div id="app">
+  <header>
+    <span class="logo">
+      <span id="hdrLogo"></span>
+      <span><h1>L'Héritage Spirituel</h1><small>par Kpala Gaston</small></span>
+    </span>
+    <button class="menu-btn" onclick="toggleNav()" aria-label="Menu">☰</button>
+  </header>
+
+  <nav id="nav" class="collapsed">
+    <span class="nav-link active" data-view="accueil" onclick="go('accueil')">Accueil</span>
+    <span class="nav-link" data-view="livres" onclick="go('livres')">Tous les livres</span>
+    <span class="nav-link" data-view="enseignements" onclick="go('enseignements')">Enseignements</span>
+    <span class="nav-link" data-view="prieres" onclick="go('prieres')">Prières</span>
+    <span class="nav-link" data-view="chants" onclick="go('chants')">Chants</span>
+    <span class="nav-link" data-view="formation" onclick="go('formation')">Formation pastorale</span>
+    <span class="nav-link" data-view="rosaire" onclick="go('rosaire')">Le Rosaire</span>
+    <span class="nav-link" data-view="neuvaine" onclick="go('neuvaine')">La Neuvaine</span>
+    <span class="nav-link" data-view="conseils" onclick="go('conseils')">Conseils pratiques</span>
+    <span class="nav-link" data-view="admin" onclick="go('admin')">Administrateur</span>
+  </nav>
+
+  <main id="main"></main>
+
+  <footer>
+    <span class="logo"><span id="footLogo"></span></span>
+    <div>L'Héritage Spirituel — © <span id="yr"></span> Kpala Gaston</div>
+    <div style="margin-top:.4rem"><a id="mail2" href="#">kpalagaston9@gmail.com</a> · WhatsApp +229 0191251771 / 0194941689</div>
+    <a class="btn btn-wa" id="waFoot" target="_blank" rel="noopener" style="max-width:340px;margin:1rem auto 0">📲 Contacter l'Administrateur</a>
+  </footer>
+</div>
+
+<script>
+/* ============ CONFIG ============ */
+const ADMIN={name:"Kpala Gaston",email:"kpalagaston9@gmail.com",wa1:"2290191251771",wa2:"2290194941689",boutique:"https://hupxfwwr.mychariow.shop"};
+const DEFAULT_ADMIN_PASS="KPALA-ADMIN"; // mot de passe de l'espace administrateur (modifiable)
+function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function read(k,d){try{return localStorage.getItem(k)??d}catch(e){return d}}
+function getAdminPass(){return read("hs_admin",DEFAULT_ADMIN_PASS);}
+
+/* ============ LOGO ============ */
+function logoSVG(s){return `<svg class="mark" width="${s}" height="${s}" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="g${s}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0d886"/><stop offset="1" stop-color="#b8902f"/></linearGradient></defs>
+<circle cx="50" cy="50" r="46" stroke="url(#g${s})" stroke-width="2.5" fill="rgba(216,179,74,.06)"/>
+<rect x="46" y="20" width="8" height="34" rx="2" fill="url(#g${s})"/><rect x="38" y="29" width="24" height="7" rx="2" fill="url(#g${s})"/>
+<path d="M20 58 Q35 52 50 58 Q65 52 80 58 L80 74 Q65 68 50 74 Q35 68 20 74 Z" fill="url(#g${s})"/>
+<path d="M50 58 L50 74" stroke="#0c1430" stroke-width="2"/>
+<path d="M27 62 Q38 58 47 62 M53 62 Q62 58 73 62" stroke="#0c1430" stroke-width="1.4" fill="none" opacity=".5"/></svg>`;}
+
+/* ============ DONNÉES ============ */
+const LIVRES=[
+ {t:"La Patience qui change une vie",c:"Développement personnel",d:"Comment la patience, vertu trop oubliée, devient une force qui transforme vos relations, votre travail et votre destinée.",detail:true},
+ {t:"Le Rempart Sacré",c:"Spiritualité catholique",d:"Un puissant recueil de prières mêlant tradition catholique et spiritualité africaine, pour ériger une muraille de protection autour de votre vie et de votre foyer."},
+ {t:"Les Mystères et la Puissance Cachée de la Vierge Marie",c:"Dévotion mariale",d:"71 pages pour découvrir la grandeur de Marie, sa puissance d'intercession et comment confier votre vie à la Mère de Dieu."},
+ {t:"Jésus-Christ, vrai Dieu et vrai homme",c:"Christologie",d:"Un parcours d'environ 150 pages au cœur du mystère du Christ : sa divinité, son humanité, et ce que sa personne change pour le croyant."},
+ {t:"La Transformation Divine",c:"Renouveau charismatique",d:"52 pages de dévotion charismatique catholique pour laisser l'Esprit Saint renouveler votre cœur et raviver votre vie spirituelle."},
+ {t:"L'Appel et l'Œuvre",c:"Ministère pastoral",d:"Guide complet (~200 pages) pour ceux que Dieu appelle au service : discerner l'appel, se former et porter du fruit dans l'œuvre."},
+ {t:"Prières pour le Baccalauréat",c:"Livret de prières",d:"Un livret de prières pour confier les examens à Dieu : paix, mémoire, courage et réussite pour les candidats et leurs familles."},
+ {t:"Sous l'iroko",c:"Théâtre interconfessionnel",d:"Une pièce de théâtre (64 pages) qui réunit les traditions sous l'arbre du dialogue, pour penser la foi, la culture et le vivre-ensemble."},
+ {t:"Chants de Louange — 43 chants + dévotionnel 30 jours",c:"Louange & adoration",d:"Un recueil de 43 chants originaux accompagné d'un dévotionnel de 30 jours pour nourrir votre adoration quotidienne."},
+ {t:"Les Combats Cachés de la Vie",c:"Développement personnel",d:"Les luttes invisibles que chacun mène en silence — et les clés spirituelles et pratiques pour en sortir vainqueur."},
+ {t:"Les Mots qui Ouvrent les Portes",c:"Écriture professionnelle",d:"L'art d'écrire pour convaincre : courriers, messages et textes qui ouvrent les portes professionnelles et personnelles."},
+ {t:"Le Pouvoir du Rire",c:"Humour & bien-être",d:"Un guide d'humour (~50 pages) pour cultiver la joie, désamorcer les tensions et faire du rire un véritable art de vivre."},
+ {t:"L'informatique pour débutants",c:"Compétences numériques",d:"64 pages claires pour apprivoiser l'ordinateur, Internet et les outils essentiels, même en partant de zéro."},
+ {t:"100 Citations de Kpala Gaston",c:"Inspiration",d:"100 citations originales de foi et de développement personnel pour méditer, partager et avancer chaque jour."}
+];
+
+/* ---- Page promo détaillée : La Patience qui change une vie ---- */
+const PATIENCE={
+ tag:"Transformez l'attente en force, et la lenteur en victoire.",
+ intro:"Nous vivons dans un monde pressé, où tout doit aller vite. Pourtant, les plus belles choses — un arbre, un enfant, une œuvre, une foi solide — demandent du temps. La patience n'est pas de la résignation : c'est une puissance tranquille qui construit ce que la précipitation détruit. Ce livre vous apprend à en faire votre meilleure alliée.",
+ vit:["Vous vous découragez quand les résultats tardent à venir.","La colère ou l'impatience abîment vos relations.","Vous abandonnez vos projets juste avant la récolte.","Vous comparez votre rythme à celui des autres et perdez la paix."],
+ benefits:[
+  "Comprendre pourquoi la patience est une force, et non une faiblesse",
+  "Garder la paix intérieure même quand tout semble bloqué",
+  "Transformer les retards et les épreuves en occasions de croissance",
+  "Préserver vos relations grâce à la maîtrise de soi",
+  "Persévérer dans vos projets jusqu'à la récolte",
+  "Faire confiance au temps de Dieu sans cesser d'agir"
+ ],
+ toc:[
+  "La patience, une force mal comprise",
+  "Pourquoi tout ce qui dure se construit lentement",
+  "Les ennemis de la patience : la peur, l'orgueil, la comparaison",
+  "La patience dans les relations : aimer sans se précipiter",
+  "Patienter sans rester passif : l'art d'attendre en agissant",
+  "Traverser l'épreuve : quand le retard devient un tremplin",
+  "La patience et la confiance en Dieu",
+  "Cultiver la patience au quotidien : habitudes et exercices",
+  "Récolter : reconnaître le temps de la moisson"
+ ],
+ excerpt:"« La graine ne discute pas avec la saison. Elle attend, enfouie dans le silence de la terre, et c'est précisément là, loin des regards, qu'elle prépare la forêt. Ta patience d'aujourd'hui est la racine de ta victoire de demain. »",
+ pour:["Celui qui se décourage trop vite","Le porteur de projet qui attend ses fruits","Le parent, l'époux, le responsable qui veut grandir en maîtrise de soi","Toute personne qui cherche la paix dans un monde pressé"],
+ verset:"« Ceux qui se confient en l'Éternel renouvellent leur force… ils courent et ne se lass
